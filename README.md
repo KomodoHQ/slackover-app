@@ -2,6 +2,10 @@
 
 Slackover is a live chat client, with notification integration. Think Slack crossed with Pushover.
 
+ - React - https://reactjs.org/docs/
+ - Firebase - https://firebase.google.com/docs/reference/js/ and https://firebase.google.com/docs/firestore/security/get-started?authuser=0
+ - Firebase React Web UI - https://github.com/firebase/firebaseui-web-react
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
