@@ -4,10 +4,12 @@ body {
 }
 
 .App {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+  grid-gap: 10px;
   background-color: #1A1D21;
   text-align: center;
   height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -15,19 +17,26 @@ body {
 
 h1 {
   color: #d4d3d8;
+
+}
+
+.channelList p {
+  color: white;
 }
 
 /* chatWindow is a class which is a wrapper for all of the text messages */
 .chatWindow {
+  grid-area: chat;
   overflow-y: auto;
-  width: 50%;
+  background-color: #34393F;
+  border-radius: 10px 0 0 10px;
 }
 
 /* textMessage is a class for all text messages */
 .textMessage {
   border-radius: 10px;
   padding: 5px 15px;
-  margin: 5px;
+  margin: 15px;
 }
 
 /* Each text message has two spans, one for the sender and one for the message */
@@ -50,19 +59,14 @@ h1 {
   background-color: #d4d3d8;
   color: #000000;
 }
-
-/*  */
 .textInput {
-  width: 100%;
-  padding: 15px;
-  margin: auto;
+  margin: 10px 0;
 }
 
-/*  */
-.textInput textarea{
-  resize: none;
-  width: 100%;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;         /* Opera/IE 8+ */
+.textInput div[role=textbox] {
+  color: #B2B4B5;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #848688;
+  background-color: #222529;
 }
