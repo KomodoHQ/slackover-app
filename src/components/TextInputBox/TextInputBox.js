@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-function TextInputBox({ messagesApi }) {
+function TextInputBox({ messagesApi, user }) {
 
   const [newMessage, setNewMessage] = useState('');
 
   const onCreate = (e) => {
     e.preventDefault();
-    messagesApi.add({ message: newMessage, createdAt: new Date() });
+    messagesApi.add({ message: newMessage, createdAt: new Date(), userId: user });
     setNewMessage('')
   };
 
   return (
-    <div>
+    <div className={`textInput`}>
       <textarea
         value={newMessage}
         onChange={e => {
