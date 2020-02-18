@@ -9,6 +9,7 @@ import './App.css';
 
 function App() {
   const storeMessages = Store.getMessagesInChannel('general');
+
   const [ signedIn, setSignedIn ] = useState(false); 
   const [ user, setUser ] = useState();
   const [ messages, setMessages ] = useState(storeMessages);
