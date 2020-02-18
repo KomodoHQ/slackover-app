@@ -38,7 +38,7 @@ const TextInputBox = ({ messagesApi, user }) => {
       <Slate editor={editor} value={newMessage} onChange={value => {
           setNewMessage(value);
         }}>
-        <Editable placeholder="Message #channel" />
+        <Editable placeholder="Message #channel - Remove the button and try send messages using enter?" />
       </Slate>
       <button onClick={onSubmit}>Send</button>
     </div>
