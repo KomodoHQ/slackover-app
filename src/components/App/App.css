@@ -1,39 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   background-color: #1A1D21;
   text-align: center;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 h1 {
   color: #d4d3d8;
 }
+
+/* chatWindow is a class which is a wrapper for all of the text messages */
 .chatWindow {
+  overflow-y: auto;
   width: 50%;
 }
 
+/* textMessage is a class for all text messages */
 .textMessage {
   border-radius: 10px;
   padding: 5px 15px;
   margin: 5px;
 }
 
+/* Each text message has two spans, one for the sender and one for the message */
 .textMessage span {
   display: block;
   text-align: left;
 }
 
+.textMessage span:first-child {
+  font-weight: bold;
+}
+
+/* green means that the message was sent by the logged in user */
 .textMessage.green {
   background-color: #0dbc79;
 }
 
+/* grey means the message was sent by anyone but the logged in user */
 .textMessage.grey {
   background-color: #d4d3d8;
   color: #000000;
 }
 
+/*  */
 .textInput {
+  width: 100%;
   padding: 15px;
+  margin: auto;
+}
+
+/*  */
+.textInput textarea{
+  resize: none;
+  width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
 }
