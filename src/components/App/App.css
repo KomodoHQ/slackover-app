@@ -1,12 +1,6 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .App {
   display: grid;
   grid-template-columns: 0.5fr 2fr;
-  grid-gap: 10px;
   background-color: #1A1D21;
   text-align: center;
   height: 100vh;
@@ -25,11 +19,11 @@ h1 {
 }
 
 /* chatWindow is a class which is a wrapper for all of the text messages */
-.chatWindow {
-  grid-area: chat;
+div.chatWindow {
   overflow-y: auto;
   background-color: #34393F;
   border-radius: 10px 0 0 10px;
+  max-height: 80vh;
 }
 
 /* textMessage is a class for all text messages */

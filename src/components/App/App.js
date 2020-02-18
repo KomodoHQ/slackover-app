@@ -8,8 +8,7 @@ import Store from '../../store/store'
 import './App.css';
 
 function App() {
-
-  const storeMessages = Store.messagesInChannel('general');
+  const storeMessages = Store.getMessagesInChannel('general');
   const [ signedIn, setSignedIn ] = useState(false); 
   const [ user, setUser ] = useState();
   const [ messages, setMessages ] = useState(storeMessages);
@@ -26,6 +25,8 @@ function App() {
     }
   };
 
+  // This is passed down as props to the text input component so that the users can send 
+  // messages directly to the firestore.
   const db = API.firestore();
   const messagesApi = db.collection("messages");
 
