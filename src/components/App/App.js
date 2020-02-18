@@ -8,13 +8,13 @@ import './App.css';
 function App() {
 
   const [ signedIn, setSignedIn ] = useState(false); 
-  const [ userId, setUserId ] = useState("");
+  const [ user, setUser ] = useState();
   const [ messages, setMessages ] = useState([
-    { message: "Hello", createdAt: new Date(), userId: "pMKR3dqINHZYCCs6I5UDZXziOqI3" },
-    { message: "Morning!", createdAt: new Date(), userId: "oc3uaqD03KQG3WAURPuFJPVTwjA3" },
-    { message: "What's the plan today?", createdAt: new Date(), userId: "oc3uaqD03KQG3WAURPuFJPVTwjA3" },
-    { message: "Read emails...", createdAt: new Date(), userId: "pMKR3dqINHZYCCs6I5UDZXziOqI3" },
-    { message: "Roger", createdAt: new Date(), userId: "oc3uaqD03KQG3WAURPuFJPVTwjA3" },
+    { message: "Hello", createdAt: new Date(), userId: "pMKR3dqINHZYCCs6I5UDZXziOqI3", sentBy: "Ian" },
+    { message: "Morning!", createdAt: new Date(), userId: "oc3uaqD03KQG3WAURPuFJPVTwjA3", sentBy: "Daniel" },
+    { message: "What's the plan today?", createdAt: new Date(), userId: "oc3uaqD03KQG3WAURPuFJPVTwjA3", sentBy: "Daniel" },
+    { message: "Read emails...", createdAt: new Date(), userId: "pMKR3dqINHZYCCs6I5UDZXziOqI3", sentBy: "Ian" },
+    { message: "Roger", createdAt: new Date(), userId: "oc3uaqD03KQG3WAURPuFJPVTwjA3", sentBy: "Daniel" },
   ]);
 
   // Configure FirebaseUI.
@@ -34,7 +34,7 @@ function App() {
 
   const logInUser = (user) => {
     setSignedIn(user);
-    setUserId(user.uid);
+    setUser(user);
   }
 
   useEffect(() => {
@@ -51,24 +51,23 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {!signedIn && (
-          <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={API.auth()} />
-        )}
-        {signedIn && (
-          <>
-            <p>
-              Welcome! <button onClick={(e) => {
-                e.preventDefault();
-                API.auth().signOut();
-                setSignedIn(false);
-              }}>Logout</button>
-            </p>
-            <ChatWindow messages={messages} user={userId} />
-            <TextInputBox messagesApi={messagesApi} user={userId} />
-          </>
-        )}
-      </header>
+      {!signedIn && (
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={API.auth()} />
+      )}
+      {signedIn && (
+        <>
+        <h1>Generic Chat!</h1>
+          <p>
+            <button onClick={(e) => {
+              e.preventDefault();
+              API.auth().signOut();
+              setSignedIn(false);
+            }}>Logout</button>
+          </p>
+          <ChatWindow messages={messages} user={user} />
+          <TextInputBox messagesApi={messagesApi} user={user} />
+        </>
+      )}
     </div>
   );
 }
