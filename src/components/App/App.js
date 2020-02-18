@@ -8,7 +8,14 @@ import './App.css';
 function App() {
 
   const [ signedIn, setSignedIn ] = useState(false); 
-  const [ messages, setMessages ] = useState([]);
+  const [ userId, setUserId ] = useState("");
+  const [ messages, setMessages ] = useState([
+    { message: "Hello", createdAt: new Date(), userId: "pMKR3dqINHZYCCs6I5UDZXziOqI3" },
+    { message: "Morning!", createdAt: new Date(), userId: "oc3uaqD03KQG3WAURPuFJPVTwjA3" },
+    { message: "What's the plan today?", createdAt: new Date(), userId: "oc3uaqD03KQG3WAURPuFJPVTwjA3" },
+    { message: "Read emails...", createdAt: new Date(), userId: "pMKR3dqINHZYCCs6I5UDZXziOqI3" },
+    { message: "Roger", createdAt: new Date(), userId: "oc3uaqD03KQG3WAURPuFJPVTwjA3" },
+  ]);
 
   // Configure FirebaseUI.
   const uiConfig = {
@@ -25,18 +32,22 @@ function App() {
   const db = API.firestore();
   const messagesApi = db.collection("messages");
 
-  useEffect(() => {
-    // Update the document title using the browser API
-    API.auth().onAuthStateChanged(user => setSignedIn(user));
-  });
+  const logInUser = (user) => {
+    setSignedIn(user);
+    setUserId(user.uid);
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await messagesApi.get();
-      setMessages(data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
-    };
-    fetchData();
-  }, [messagesApi]);
+    API.auth().onAuthStateChanged(user => logInUser(user));
+  }, []);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await messagesApi.get();
+  //     setMessages(data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+  //   };
+  //   fetchData();
+  // }, [messagesApi]);
 
   return (
     <div className="App">
@@ -53,8 +64,8 @@ function App() {
                 setSignedIn(false);
               }}>Logout</button>
             </p>
-            <ChatWindow messages={messages} />
-            <TextInputBox messagesApi={messagesApi} />
+            <ChatWindow messages={messages} user={userId} />
+            <TextInputBox messagesApi={messagesApi} user={userId} />
           </>
         )}
       </header>
