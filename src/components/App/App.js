@@ -7,7 +7,7 @@ import TextInputBox from "../TextInputBox";
 import ChannelList from "../ChannelList";
 import './App.css';
 
-function App() {
+const App = () => {
   const storeMessages = Store.getMessagesInChannel('general');
 
   const [ signedIn, setSignedIn ] = useState(false); 
