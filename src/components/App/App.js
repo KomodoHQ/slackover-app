@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import API from "../../api";
+import Store from '../../store/store'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import ChatWindow from "../ChatWindow";
 import TextInputBox from "../TextInputBox";
 import ChannelList from "../ChannelList";
-import Store from '../../store/store'
 import './App.css';
 
 function App() {

@@ -8,7 +8,6 @@ body {
   grid-template-columns: 0.5fr 2fr;
   background-color: #1A1D21;
   text-align: center;
-  max-height: 100vh;
 }
 
 h1 {
@@ -25,7 +24,8 @@ div.chatWindow {
   overflow-y: scroll;
   background-color: #34393F;
   border-radius: 10px 0 0 10px;
-  max-height: 80vh;
+  max-height: 70vh;
+  min-height: 20vh;
 }
 
 /* textMessage is a class for all text messages */
@@ -55,10 +55,12 @@ div.chatWindow {
   background-color: #d4d3d8;
   color: #000000;
 }
+
 .textInput {
   margin: 10px 0;
 }
 
+/* Input box styling */
 .textInput div[role=textbox] {
   color: #B2B4B5;
   border-radius: 10px;
@@ -68,11 +70,12 @@ div.chatWindow {
   margin: 5px;
 }
 
-/* */
+/* Affects all child elements of textInput */
 .textInput * {
   text-align: left;
 }
 
+/* Generic button css for send and log out */
 button {
   text-align: left;
   width: 50%;
