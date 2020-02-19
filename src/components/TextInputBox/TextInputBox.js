@@ -18,7 +18,7 @@ const TextInputBox = ({ messagesApi, user }) => {
     const text = parseText(newMessage);
 
     // Add the message to the database
-    messagesApi.add({ message: text, createdAt: new Date(), userId: user.uid });
+    messagesApi.add({ message: text, createdAt: new Date(), userId: user.uid, sentBy: user.displayName, channelName: 'general' });
 
     // ... then we can reset state
     setNewMessage([ { children: [ { text: '' } ] } ]);
