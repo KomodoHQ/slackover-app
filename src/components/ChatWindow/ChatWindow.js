@@ -1,12 +1,12 @@
 import React from "react";
 import TextMessageBox from '../TextMessageBox'
 
-function ChatWindow({ messages }) {
+function ChatWindow({ messages, user }) {
 
   return (
-    <div>
+    <div className={`chatWindow`}>
       {messages && messages.map((message) => {
-        return <TextMessageBox message={message} key={message.id} />;
+        return <TextMessageBox message={message} key={message.id} user={user} />;
       })}
     </div>
   );
