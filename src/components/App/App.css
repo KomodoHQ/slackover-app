@@ -1,0 +1,95 @@
+body {
+  background-color: #1A1D21;
+}
+
+.App {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 0.5fr 2fr;
+  background-color: #1A1D21;
+  text-align: center;
+}
+
+h1 {
+  color: #d4d3d8;
+}
+
+.channelList p {
+  color: white;
+}
+
+/* chatWindow is a class which is a wrapper for all of the text messages */
+div.chatWindow {
+  width: 99%;
+  overflow-y: scroll;
+  background-color: #34393F;
+  border-radius: 10px 0 0 10px;
+  max-height: 70vh;
+  min-height: calc(100vh - 17rem);
+}
+
+/* textMessage is a class for all text messages */
+.textMessage {
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin: 15px;
+}
+
+/* Each text message has two spans, one for the sender and one for the message */
+.textMessage span {
+  display: block;
+  text-align: left;
+}
+
+.textMessage span:first-child {
+  font-weight: bold;
+}
+
+/* green means that the message was sent by the logged in user */
+.textMessage.green {
+  background-color: #0dbc79;
+}
+
+/* grey means the message was sent by anyone but the logged in user */
+.textMessage.grey {
+  background-color: #d4d3d8;
+  color: #000000;
+}
+
+.textInput {
+  margin: 10px 15px 10px 0;
+}
+
+/* Input box styling */
+.textInput div[role=textbox] {
+  color: #B2B4B5;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #848688;
+  background-color: #222529;
+  margin: 0;
+}
+
+/* Affects all child elements of textInput */
+.textInput * {
+  text-align: left;
+}
+
+/* Generic button css for send and log out */
+button {
+  text-align: left;
+  width: 50%;
+  float: left;
+  background-color: #4f5358;
+  color: white;
+  font-size: 1.5rem;
+  padding: 14px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0084FF;
+}
