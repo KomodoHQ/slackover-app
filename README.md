@@ -35,14 +35,15 @@ Really, it's up to you what you would like to do to help improve the project.
 ## Where do I start?
 
 1. Fork this project into your own [GitHub](https://github.com/) repo.
-2. Register for your own free [Firebase account](https://firebase.google.com/) and replace the appropriate keys in `src/api/index.js`.
-3. (Optional) - If you want to work on the backend to add a notification service, follow the instructions to setup the [Firebase CLI](https://firebase.google.com/docs/functions/get-started) and login.
-4. Enable the [Firebase authentication](https://firebase.google.com/) module using email and password.
-5. Create a [Firebase firestore](https://firebase.google.com/) called `messages`.
-6. Make sure you have installed [node 12 LTS](https://nodejs.org/en/download/) and [yarn](https://yarnpkg.com/).
-7. Open the project folder, and type `yarn && yarn start`. Test you can register, login, and send and receive messages.
-8. Get cracking with your awesome new feature!
-9. If you get to a point where you're happy with what you've build, open a Pull Request back to us, and we can review what you've done!
+2. Register for your own free [Firebase account](https://firebase.google.com/) and Register a web app (dont forget to copy your keys).
+3. Replace the appropriate keys for your firebase account in `src/api/index.js`.
+4. (Optional) - If you want to work on the backend to add a notification service, follow the instructions to setup the [Firebase CLI](https://firebase.google.com/docs/functions/get-started) and login.
+5. Enable the [Firebase authentication](https://firebase.google.com/) module using email and password.
+6. Create a [Firebase firestore](https://firebase.google.com/) called `messages`. To do this you can add a test message using the data properties as shown in `src/store/store.js`.
+7. Make sure you have installed [node 12 LTS](https://nodejs.org/en/download/) and [yarn](https://yarnpkg.com/).
+8. Open the project folder, and type `yarn && yarn start`. Test you can register, login, and send and receive messages.
+9. Get cracking with your awesome new feature!
+10. If you get to a point where you're happy with what you've build, open a Pull Request back to us, and we can review what you've done!
 
 ## Helpful Resources
 
