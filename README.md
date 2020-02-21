@@ -29,6 +29,8 @@ Some ideas for what you could do:
  - Add [location support](https://developers.google.com/maps/documentation) to send locations with a map preview to other users
  - Create a new way of sending messages to the chat - for example an [Alexa Skill](https://developer.amazon.com/en-GB/docs/alexa/ask-overviews/build-skills-with-the-alexa-skills-kit.html)
  - Add some automated tests, using [Jest](https://jestjs.io/), [React testing library](https://github.com/testing-library/react-testing-library) or [Cypress](https://www.cypress.io/)
+ - Improve the code quality - maybe integrate tools such as [CodeClimate](https://codeclimate.com/)
+ - Setup a CI / CD pipline
 
 Really, it's up to you what you would like to do to help improve the project. 
 
@@ -41,9 +43,11 @@ Really, it's up to you what you would like to do to help improve the project.
 5. Enable the [Firebase authentication](https://firebase.google.com/) module using email and password.
 6. Create a [Firebase firestore](https://firebase.google.com/) called `messages`. To do this you can add a test message using the data properties as shown in `src/store/store.js`.
 7. Make sure you have installed [node 12 LTS](https://nodejs.org/en/download/) and [yarn](https://yarnpkg.com/).
-8. Open the project folder, and type `yarn && yarn start`. Test you can register, login, and send and receive messages.
-9. Get cracking with your awesome new feature!
-10. If you get to a point where you're happy with what you've build, open a Pull Request back to us, and we can review what you've done!
+8. Open the project folder, and type `yarn && yarn start`. Test you can register and login.
+9. You will need to add a missing database index at this stage. Open the browser developer console, and follow the provided link to add the composite index.
+10. Test you can send and receive messages.
+11. Get cracking with your awesome new feature!
+12. If you get to a point where you're happy with what you've build, open a Pull Request back to us, and we can review what you've done!
 
 ## Helpful Resources
 
